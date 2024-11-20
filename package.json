@@ -1,17 +1,15 @@
 {
-  "name": "ptas---behlulu",
+  "name": "ptas-brenda",
   "version": "1.0.0",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
+  "author": "Brenda Vieira",
   "license": "ISC",
   "dependencies": {
-    "@prisma/client": "^5.20.0",
-    "prisma": "^5.20.0"
-  },
-  "devDependencies": {},
-  "description": ""
+    "prisma": "^5.22.0"
+  }
 }
