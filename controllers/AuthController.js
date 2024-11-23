@@ -1,5 +1,4 @@
-const { PrismaClient } = require("@prisma/client");
-const prisma = new PrismaClient();
+const prisma = require("../prisma/prismaClient");
 
 const bcryptjs = require("bcryptjs");
 const jwt = require("jsonwebtoken");
@@ -73,7 +72,7 @@ class AuthController{
             })
         }
     }
-    
+
     static async login (req, res) {
         const {email, password} = req.body;
 
