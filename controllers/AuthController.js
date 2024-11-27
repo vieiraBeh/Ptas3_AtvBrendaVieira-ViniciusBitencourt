@@ -7,21 +7,21 @@ class AuthController{
     static async cadastro(req, res){
         const {nome, email, password, tipo} = req.body;
 
-        if(!nome || nome.lenght < 6){
+        if(!nome || nome.length < 6){
             return res.status(422).json({
                 erro : true,
                 mensagem: "Nome deve ter pelo menos 6 caracteres."
             });
         }
 
-        if(!email || email.lenght < 10){
+        if(!email || email.length < 10){
             return res.status(422).json({
                 erro : true,
                 mensagem: "O email deve ter pelo menos 10 caracteres."
             });
         }
 
-        if(!password || password.lenght < 8){
+        if(!password || password.length < 8){
             return res.status(422).json({
                 erro : true,
                 mensagem: "A senha deve ter pelo menos 8 caracteres."
