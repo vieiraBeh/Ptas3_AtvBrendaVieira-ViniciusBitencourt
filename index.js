@@ -14,4 +14,6 @@ app.use(express.json());
 const authRoutes = require("./routes/authRoutes");
 app.use("/auth", authRoutes);
 
+
+
 app.listen(8000);
