@@ -11,8 +11,15 @@ app.use(cors({
 
 app.use(express.json());
 
+//app.get("/meus-pedidos", AuthController. verificaAutenticacao(req, res)=> {
+//    res.send("Veja seus pedidos abaixo:")
+//});
 const authRoutes = require("./routes/authRoutes");
+const AuthController = require("./controllers/AuthController");
 app.use("/auth", authRoutes);
+
+const ProfileRoutes = require("./routes/ProfileRoutes");
+app.use("/perfil", ProfileRoutes);
 
 
 
