@@ -18,9 +18,13 @@ const authRoutes = require("./routes/authRoutes");
 const AuthController = require("./controllers/AuthController");
 app.use("/auth", authRoutes);
 
-const ProfileRoutes = require("./routes/ProfileRoutes");
-app.use("/perfil", ProfileRoutes);
+const profileRoutes = require("./routes/profileRoutes");
+app.use("/perfil", AuthController.autenticar, profileRoutes);
 
-
+app.get("/privado", AuthController.verificaAutenticacao, (req, res) => {
+    res.json({
+        msg: "Você acessou uma rota restrita!"
+    });
+});
 
 app.listen(8000);
