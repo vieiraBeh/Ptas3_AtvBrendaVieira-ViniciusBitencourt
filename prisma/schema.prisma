@@ -14,9 +14,61 @@ datasource db {
 }
 
 model Usuario{
+
   id Int @id @default(autoincrement())
+
   nome String
+
   email String @unique
+
   password String
-  tipo String 
+
+  tipo String
+
+  reservas Reserva[]
+
+}
+
+
+
+model Mesa{
+
+  id Int @id @default(autoincrement())
+
+  codigo String
+
+  n_lugares Int
+
+  reservas Reserva[]
+
+}
+
+
+
+model Reserva{
+
+  id Int @id @default(autoincrement())
+
+  data DateTime
+
+  n_pessoas Int
+
+  
+
+  // status true somente se a reserva estiver ativa. False se for cancelada.
+
+  status Boolean @default(true)
+
+  
+
+  usuarioId Int
+
+  usuario Usuario @relation(fields: [usuarioId], references: [id])
+
+
+
+  mesaId Int
+
+  mesa Mesa @relation(fields: [mesaId], references: [id])
+
 }

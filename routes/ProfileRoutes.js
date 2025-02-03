@@ -1,11 +1,13 @@
-const prisma = require("../prisma/prismaClient");
+const express = require("express");
+const router = express.Router(); 
 
-class ProfileController{
-    static async getPerfil(req, res){
+const ProfileController = require("../controllers/ProfileController");
+const AuthController = require("../controllers/AuthController");
 
-    }
+router.get("/", ProfileController.mostrarProfile);
 
-    static async atualizarPerfil(req, res){
-        
-    }
-}
+router.patch("/", ProfileController.atualizarProfile);
+
+router.get("/todos", AuthController.verificaAdm, ProfileController.buscarUsuarios)
+
+module.exports = router;
