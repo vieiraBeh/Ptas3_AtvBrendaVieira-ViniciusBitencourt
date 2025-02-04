@@ -7,7 +7,7 @@
     "start": "nodemon index.js"
   },
   "keywords": [],
-  "author": "Brenda Vieira",
+  "author": "Brenda Vieira e Vinicius Bitencourt",
   "license": "ISC",
   "dependencies": {
     "@prisma/client": "^5.22.0",
@@ -20,5 +20,6 @@
     "nodemon": "^3.1.9",
     "prisma": "^5.22.0"
   },
+  "devDependencies": {},
   "description": ""
 }
