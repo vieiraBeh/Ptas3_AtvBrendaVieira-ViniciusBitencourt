@@ -3,8 +3,8 @@ const prisma = require("../prisma/prismaClient");
 class ProfileController {
     static async mostrarProfile(req, res) {
         const perfil = await prisma.usuario.findUnique({
+            select: {email: true,nome: true,tipo: true},
             where: { id: req.usuarioId },
-            omit: { password: true },
         });
 
         return res.status(200).json({

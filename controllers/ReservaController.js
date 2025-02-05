@@ -83,6 +83,7 @@ class ReservaController {
                 return res.status(222).json({
                     erro: true,
                     mensagem: "O usuario não tem reserva.",
+                    reservas: quantReservas
                 })
             }
 
